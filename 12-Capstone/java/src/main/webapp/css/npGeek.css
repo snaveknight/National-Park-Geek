@@ -1,1 +1,75 @@
 @charset "ISO-8859-1";
+body {
+font-family: sans-serif;
+}
+
+header {
+margin: 25px;
+}
+
+header h1 {
+font-size: 21pt;
+color: #FFFFFF;
+}
+
+header p {
+color: #FFFFFF;
+/font-size: 12pt;/
+}
+
+header img {
+height: 110px;
+}
+
+ul {
+padding-left: 80px;
+}
+
+li {
+padding-bottom: 4px;
+}
+
+li a {
+color: #0D118B;
+text-decoration: none;
+/font-size: 20pt;/
+list-style: none;
+text-align: center;
+vertical-align: middle;
+}
+
+nav ul {
+width: 100%;
+}
+
+nav ul li {
+float: left;
+margin-right: 20px;
+background-color: white;
+border-radius: 8px;
+list-style: none;
+text-align: center;
+width: 200px;
+padding-top: 5px;
+}
+
+nav:after {
+clear: both;
+}
+
+li a:hover {
+text-decoration: underline;
+}
+.copyright {
+	position: center;
+}
+section p {
+	text-align: left;
+}
+
+.parkList {
+	width: 80%;
+	margin: 25px;
+	text-align: left;
+	vertical-align: top;
+}

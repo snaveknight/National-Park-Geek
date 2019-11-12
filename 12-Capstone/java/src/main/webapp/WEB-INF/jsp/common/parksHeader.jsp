@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>National Park Geek</title>
-<c:url value="/css/npgeek.css" var="cssHref" />
+<c:url value="/css/npGeek.css" var="cssHref" />
 <link rel="stylesheet" href="${cssHref }">
 </head>
 
