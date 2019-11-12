@@ -12,10 +12,18 @@ public class Parks {
 	private String climate;
 	private int yearFounded;
 	private int annualVisitorCount;
+	private String inspirationalQuote;
+	
 	private String inspirationalQuoteSource;
 	private String parkDescription;
-	private int entreeFee;
+	private int entryFee;
 	private int numberOfAnimalSpecies;
+	public String getInspirationalQuote() {
+		return inspirationalQuote;
+	}
+	public void setInspirationalQuote(String inspirationalQuote) {
+		this.inspirationalQuote = inspirationalQuote;
+	}
 	
 	public String getParkCode() {
 		return parkCode;
@@ -89,11 +97,11 @@ public class Parks {
 	public void setParkDescription(String parkDescription) {
 		this.parkDescription = parkDescription;
 	}
-	public int getEntreeFee() {
-		return entreeFee;
+	public int getEntryFee() {
+		return entryFee;
 	}
-	public void setEntreeFee(int entreeFee) {
-		this.entreeFee = entreeFee;
+	public void setEntryFee(int entreeFee) {
+		this.entryFee = entreeFee;
 	}
 	public int getNumberOfAnimalSpecies() {
 		return numberOfAnimalSpecies;

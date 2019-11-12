@@ -5,5 +5,7 @@ import java.util.List;
 public interface ParksDao {
 	
 	public List<Parks> getAllParksInAlphOrder();
+	
+	public List<Parks> getParkInfoById();
 
 }
