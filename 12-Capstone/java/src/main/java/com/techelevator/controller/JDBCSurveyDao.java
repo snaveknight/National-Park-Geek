@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -32,18 +33,26 @@ public class JDBCSurveyDao implements SurveyDao {
 				survey.getActivityLevel());
 	}
 	@Override
-	public void getAllParksInFavOrder() {
+	public List<Parks> getAllParksInFavOrder() {
 		List<Parks> favParks = new ArrayList<>();
-		String sqlGetAllParks = "select p.parkname, COUNT(s.surveyid) AS favorites\r\n" + 
-				"FROM park p\r\n" + 
-				"INNER JOIN\r\n" + 
-				"survey_result s\r\n" + 
-				"ON\r\n" + 
-				"p.parkcode = s.parkcode\r\n" + 
-				"GROUP BY\r\n" + 
-				"parkname\r\n" + 
-				"ORDER BY\r\n" + 
-				"favorites ASC";
+		String sqlGetAllParks = "select COUNT(s.parkcode) AS favorites, parkname\r\n" + 
+				"				FROM survey_result s\r\n" + 
+				"				INNER JOIN park p \r\n" + 
+				"				\r\n" + 
+				"				ON \r\n" + 
+				"				p.parkcode = s.parkcode \r\n" + 
+				"				GROUP BY\r\n" + 
+				"				parkname \r\n" + 
+				"				ORDER BY\r\n" + 
+				"				favorites DESC";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllParks);
+		while (results.next()) {
+			Parks parks = new Parks();
+			parks.setParkName(results.getString("parkname"));
+			parks.setFavorites(results.getInt("favorites"));
+			favParks.add(parks);
+		}
+		return favParks;
 	}
 	
 	

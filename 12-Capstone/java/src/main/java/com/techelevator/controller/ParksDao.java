@@ -8,6 +8,6 @@ public interface ParksDao {
 	
 	public Parks getParkInfoById(String parkCode);
 
-	List<Parks> getAllParksInFavOrder();
+
 
 }

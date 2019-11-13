@@ -61,28 +61,6 @@ public class JDBCParksDao implements ParksDao {
 		return parks;
 	}
 	
-	@Override
-	public List<Parks> getAllParksInFavOrder() {
-		List<Parks> favParks = new ArrayList<>();
-		String sqlGetFavParks = "select p.parkname, COUNT(s.surveyid) AS favorites\\r\\n\" + \r\n" + 
-				"				\"FROM park p\\r\\n\" + \r\n" + 
-				"				\"INNER JOIN\\r\\n\" + \r\n" + 
-				"				\"survey_result s\\r\\n\" + \r\n" + 
-				"				\"ON\\r\\n\" + \r\n" + 
-				"				\"p.parkcode = s.parkcode\\r\\n\" + \r\n" + 
-				"				\"GROUP BY\\r\\n\" + \r\n" + 
-				"				\"parkname\\r\\n\" + \r\n" + 
-				"				\"ORDER BY\\r\\n\" + \r\n" + 
-				"				\"favorites ASC";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetFavParks);
-		while (results.next()) {
-			Parks parks = new Parks();
-			parks.setParkName(results.getString("parkname"));
-			parks.setParkDescription(results.getString("parkdescription"));
-			favParks.add(parks);
-		}
-		return favParks;
 
-	}
 
 }

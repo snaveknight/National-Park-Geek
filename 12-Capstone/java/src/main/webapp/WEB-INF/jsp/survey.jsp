@@ -1,21 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <c:import url="/WEB-INF/jsp/common/parksHeader.jsp" />
 
 
 <title>Popularity Survey!</title>
 <section id="survey-form">
-	<form:form modelAttribute="survey" action="/survey" method="POST">
-		Park Code:<br> <select name="parkCode">
+	<form:form modelAttribute="survey" action="survey" method="POST">
+		Park Code:<br> <form:select path="parkCode">
 			<c:forEach var="park" items="${parks }">
 				<option value=<c:out value="${park.parkCode }"/>><c:out
 						value="${park.parkName }"></c:out>
 			</c:forEach>
-		</select><br> Type your email:<br> <input type="email"
-			name="emailAddress"> <br> State of Residency:<br> <select
-			name="state">
+		</form:select><form:errors path="parkCode"/>
+		<br> 
+		Type your email:
+		<form:input path="emailAddress" />
+		
+		<form:errors path="emailAddress"/>
+		<br> State of Residency: 
+		<form:select path="state">
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -67,22 +72,18 @@
 			<option value="WV">West Virginia</option>
 			<option value="WI">Wisconsin</option>
 			<option value="WY">Wyoming</option>
-		</select> <br> level of activity:<br> <select>
+		</form:select> 
+		<form:errors path="state" />
+		<br>
+		 level of activity: <form:select path="activityLevel">
 			<option value="Inactive">Inactive</option>
 			<option value="Slightly Active">Slightly Active</option>
 			<option value="Very Active">Very Active</option>
 			<option value="Always Active">Always Active</option>
-		</select> <br> <input type="submit" value="submit" />
-
-
-
-
+		</form:select>
+		<form:errors path="activityLevel" />
+		 <br> <input type="submit" value="submit" />
 	</form:form>
-
-
-
-
-
 </section>
 
 <c:import url="/WEB-INF/jsp/common/parksFooter.jsp" />

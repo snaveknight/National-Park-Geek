@@ -41,7 +41,7 @@ public class surveyController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "survey",
 					result);
 			flash.addFlashAttribute("survey", survey);
-			return "redirect:/";
+			return "redirect:/survey";
 		}
 		surveyDao.save(survey);
 		return "redirect:/favorites";
@@ -49,8 +49,8 @@ public class surveyController {
 	
 	@RequestMapping(path= "/favorites", method = RequestMethod.GET)
 	public String getListOfFavoriteCampsites(Survey survey, ModelMap map) {
-		List<Parks> favParks = parksDao.getAllParksInFavOrder();
-		map.put("parks", favParks);
+		List<Parks> favParks = surveyDao.getAllParksInFavOrder();
+		map.put("favoriteparks", favParks);
 		return "favorites";
 	}
 	

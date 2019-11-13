@@ -17,6 +17,14 @@ public class Parks {
 	private String parkDescription;
 	private int entryFee;
 	private int numberOfAnimalSpecies;
+	private int favorites;
+	
+	public int getFavorites() {
+		return favorites;
+	}
+	public void setFavorites(int favorites) {
+		this.favorites = favorites;
+	}
 	public String getInspirationalQuote() {
 		return inspirationalQuote;
 	}

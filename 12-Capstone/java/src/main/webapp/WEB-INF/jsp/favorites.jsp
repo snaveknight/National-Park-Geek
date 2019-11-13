@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 
 <table>
-	<c:forEach items="${parks}" var="parks">
+	<c:forEach items="${favoriteparks}" var="favoriteparks">
 		<tr>
 			<td>
-				<h3>${parks.parkName }</h3>
+				<h3>${favoriteparks.parkName }</h3>
 			</td>
-			<td> 
+			<td> <h3>${favoriteparks.favorites }</h3>
 	</td>
 	</tr>
 	</c:forEach>
