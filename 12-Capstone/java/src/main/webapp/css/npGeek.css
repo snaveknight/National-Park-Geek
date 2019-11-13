@@ -7,30 +7,18 @@ header {
 margin: 25px;
 }
 
-header h1 {
-font-size: 21pt;
-color: #FFFFFF;
-}
-
-header p {
-color: #FFFFFF;
-/font-size: 12pt;/
-}
-
 header img {
-height: 110px;
-}
-
-ul {
-padding-left: 80px;
+width: 100%;
+border-bottom-style: dotted;
+border-color: black;
 }
 
 li {
-padding-bottom: 4px;
+padding-bottom: 5px;
 }
 
 li a {
-color: #0D118B;
+color: #0000ff;
 text-decoration: none;
 /font-size: 20pt;/
 list-style: none;
@@ -60,16 +48,14 @@ clear: both;
 li a:hover {
 text-decoration: underline;
 }
-.copyright {
-	position: center;
-}
-section p {
-	text-align: left;
+
+html {
+	align-content: stretch;
+background-image:linear-gradient(to bottom right, #AFEEEE, #C71585);
 }
 
-.parkList {
-	width: 80%;
-	margin: 25px;
-	text-align: left;
-	vertical-align: top;
+.copyright {
+text-align: center;
 }
+
+

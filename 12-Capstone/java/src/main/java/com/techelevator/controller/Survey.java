@@ -11,7 +11,6 @@ public class Survey {
 	private String parkCode;
 	
 	@Email(message="You must enter a valid email")
-	@NotBlank(message="Email is required")
 	private String emailAddress;
 	
 	@NotBlank(message="State is required")
