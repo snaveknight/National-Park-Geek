@@ -24,7 +24,8 @@
 		<c:url value="/" var="parksHomePageURL" />
 		<li><a href="${parksHomePageURL }">Home</a></li>
 		<!-- make survey url later  -->
-		<li><a href="${surveryURL }">Survey</a></li>
+		<c:url value="/survey" var="surveyURL" />
+		<li><a href="${surveyURL }">Survey</a></li>
 	</ul>
 	</nav>
 

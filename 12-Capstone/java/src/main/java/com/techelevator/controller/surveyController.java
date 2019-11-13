@@ -1,5 +1,7 @@
 package com.techelevator.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,10 +13,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class surveyController {
 
 	@Autowired
+	private ParksDao parksDao;
+	
+	@Autowired
 	private SurveyDao surveyDao;
 	
 	@RequestMapping(path = "/survey", method = RequestMethod.GET)
 	public String toSurveyPage(Survey survey, ModelMap map) {
+		List<Parks> allParks = parksDao.getAllParksInAlphOrder();
+		map.put("parks", allParks);
 		return "survey";
 	}
 	
