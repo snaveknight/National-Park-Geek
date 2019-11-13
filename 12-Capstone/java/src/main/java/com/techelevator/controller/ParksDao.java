@@ -6,6 +6,6 @@ public interface ParksDao {
 	
 	public List<Parks> getAllParksInAlphOrder();
 	
-	public List<Parks> getParkInfoById(String parkCode);
+	public Parks getParkInfoById(String parkCode);
 
 }

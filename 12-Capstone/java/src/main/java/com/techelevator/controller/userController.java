@@ -19,8 +19,7 @@ public class userController {
 	
 	@RequestMapping("/parkDetails")
 	public String showDetails(@RequestParam String parkCode,ModelMap map) {
-		map.put("parkCode", parkCode);
-		map.put("details", parksDao.getParkInfoById(parkCode));
+		map.put("parkslist",parksDao.getParkInfoById(parkCode.toUpperCase() ));
 		return "parkDetails";
 	}
 	

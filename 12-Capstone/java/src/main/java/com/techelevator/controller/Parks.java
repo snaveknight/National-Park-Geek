@@ -8,12 +8,11 @@ public class Parks {
 	private int acreage;
 	private int elevationInFeet;
 	private double milesOfTrail;
-	private int numerOfCampsites;
+	private int numberOfCampsites;
 	private String climate;
 	private int yearFounded;
 	private int annualVisitorCount;
 	private String inspirationalQuote;
-	
 	private String inspirationalQuoteSource;
 	private String parkDescription;
 	private int entryFee;
@@ -61,11 +60,12 @@ public class Parks {
 	public void setMilesOfTrail(double milesOfTrail) {
 		this.milesOfTrail = milesOfTrail;
 	}
-	public int getNumerOfCampsites() {
-		return numerOfCampsites;
+
+	public int getNumberOfCampsites() {
+		return numberOfCampsites;
 	}
-	public void setNumerOfCampsites(int numerOfCampsites) {
-		this.numerOfCampsites = numerOfCampsites;
+	public void setNumberOfCampsites(int numberOfCampsites) {
+		this.numberOfCampsites = numberOfCampsites;
 	}
 	public String getClimate() {
 		return climate;

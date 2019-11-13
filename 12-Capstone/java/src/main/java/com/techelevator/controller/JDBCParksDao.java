@@ -36,19 +36,18 @@ public class JDBCParksDao implements ParksDao {
 	}
 
 	@Override
-	public List<Parks> getParkInfoById(String parkCode) {
-		List<Parks> thisPark = new ArrayList<>();
+	public Parks getParkInfoById(String parkCode) {
+		Parks parks = new Parks();
 		String sqlGetThisPark = "Select * from park where parkcode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetThisPark, parkCode);
 		while (results.next()) {
-			Parks parks = new Parks();
-			parks.setParkCode(results.getString("parkcode"));
+			parks.setParkCode(results.getString("parkcode").toLowerCase());
 			parks.setParkName(results.getString("parkname"));
 			parks.setState(results.getString("state"));
 			parks.setAcreage(results.getInt("acreage"));
 			parks.setElevationInFeet(results.getInt("elevationinfeet"));
 			parks.setMilesOfTrail(results.getDouble("milesoftrail"));
-			parks.setNumerOfCampsites(results.getInt("numberofcampsites"));
+			parks.setNumberOfCampsites(results.getInt("numberofcampsites"));
 			parks.setClimate(results.getString("climate"));
 			parks.setYearFounded(results.getInt("yearfounded"));
 			parks.setAnnualVisitorCount(results.getInt("annualvisitorcount"));
@@ -56,10 +55,10 @@ public class JDBCParksDao implements ParksDao {
 			parks.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));
 			parks.setParkDescription(results.getString("parkdescription"));
 			parks.setEntryFee(results.getInt("entryfee"));
-			parks.setNumberOfAnimalSpecies(results.getInt("numberofanimlaspecies"));
-			thisPark.add(parks);
+			parks.setNumberOfAnimalSpecies(results.getInt("numberofanimalspecies"));
+		
 		}
-		return thisPark;
+		return parks;
 	}
 
 }

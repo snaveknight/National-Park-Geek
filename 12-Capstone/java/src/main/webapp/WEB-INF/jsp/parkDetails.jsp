@@ -7,23 +7,21 @@
 <title>Insert title here</title>
 
 <section class="parkDetails">
-	<c:url value="/img/parks/${details.parkCode }.jpg" var="image" />
+
+	<c:url value="/img/parks/${parkslist.parkCode }.jpg" var="image" />
 	<img src="${image }" />
-	<h3>${details.parkName }</h3>
-	<p>${details.parkDescription }</p>
-	<h3>${details.state }</h3>
-	<h3>${details.acreage }</h3>
-	<h3>${details.elevationInFeet }</h3>
-	<h3>${details.milesOfTrail }</h3>
-	<h3>${details.numberOfCampsites }</h3>
-	<h3>${details.climate }</h3>
-	<h3>${details.yearFounded }</h3>
-	<h3>${details.annualVisitorCount }</h3>
-	<h3>${details.inspirationalQuote }</h3>
-	<h3>${details.inspirationalQuoteSource }</h3>
-	<h3>${details.parkDescription }</h3>
-	<h3>${details.entryFee }</h3>
-	<h3>${details.numberOfAnimalSpecies }</h3>
+	<h3>${parkslist.parkName }   - ${parkslist.state }</h3>
+	<p>${parkslist.parkDescription }</p>
+	<h3>Acreage: ${parkslist.acreage }</h3>
+	<h3>Evlevation: ${parkslist.elevationInFeet } feet</h3>
+	<h3>Miles of trail: ${parkslist.milesOfTrail }</h3>
+	<h3>Number of Campsites: ${parkslist.numberOfCampsites }</h3>
+	<h3>Climate: ${parkslist.climate }</h3>
+	<h3>Year founded: ${parkslist.yearFounded }</h3>
+	<h3>Annual Visitors: ${parkslist.annualVisitorCount }</h3>
+	<h3>Park Motto: ${parkslist.inspirationalQuote } - ${parkslist.inspirationalQuoteSource }</h3>
+	<h3>Entry Fee: $${parkslist.entryFee }</h3>
+	<h3>Number Of Animal Species: ${parkslist.numberOfAnimalSpecies }</h3>
 </section>
 
 <c:import url="/WEB-INF/jsp/common/parksFooter.jsp" />
