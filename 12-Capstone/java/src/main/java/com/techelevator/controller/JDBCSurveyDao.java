@@ -27,7 +27,7 @@ public class JDBCSurveyDao implements SurveyDao {
 				"parkcode, emailaddress, state, activitylevel)"
 				+ " values(?, ?, ?, ?)";
 		jdbcTemplate.update(sqlInsertPost, 
-				survey.getParkCode(),
+				survey.getParkCode().toUpperCase(),
 				survey.getEmailAddress(),
 				survey.getState(), 
 				survey.getActivityLevel());
@@ -50,6 +50,7 @@ public class JDBCSurveyDao implements SurveyDao {
 			Parks parks = new Parks();
 			parks.setParkName(results.getString("parkname"));
 			parks.setFavorites(results.getInt("favorites"));
+			
 			favParks.add(parks);
 		}
 		return favParks;

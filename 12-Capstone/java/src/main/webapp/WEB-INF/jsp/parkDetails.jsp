@@ -10,10 +10,10 @@
 
 	<c:url value="/img/parks/${parkslist.parkCode }.jpg" var="image" />
 	<img src="${image }" />
-	<h3>${parkslist.parkName }   - ${parkslist.state }</h3>
+	<h2>${parkslist.parkName }   - ${parkslist.state }</h2>
 	<p>${parkslist.parkDescription }</p>
 	<h3>Acreage: ${parkslist.acreage }</h3>
-	<h3>Evlevation: ${parkslist.elevationInFeet } feet</h3>
+	<h3>Elevation: ${parkslist.elevationInFeet } feet</h3>
 	<h3>Miles of trail: ${parkslist.milesOfTrail }</h3>
 	<h3>Number of Campsites: ${parkslist.numberOfCampsites }</h3>
 	<h3>Climate: ${parkslist.climate }</h3>
@@ -23,5 +23,21 @@
 	<h3>Entry Fee: $${parkslist.entryFee }</h3>
 	<h3>Number Of Animal Species: ${parkslist.numberOfAnimalSpecies }</h3>
 </section>
+	
+	<!-- today, which will be monday , needs an image and high/low and also the advisory info-->
+	Your parks five day forecast:
+	<section class="weatherForecast" >
+	<table>
+	
+	
+	
+	
+	</table>
+	</section>
+	
+	
+	
+	
+	
 
 <c:import url="/WEB-INF/jsp/common/parksFooter.jsp" />

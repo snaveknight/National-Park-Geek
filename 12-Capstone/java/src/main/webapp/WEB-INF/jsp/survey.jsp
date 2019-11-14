@@ -13,11 +13,10 @@
 				<option value=<c:out value="${park.parkCode }"/>><c:out
 						value="${park.parkName }"></c:out>
 			</c:forEach>
-		</form:select><form:errors path="parkCode"/>
+		</form:select>
 		<br> 
 		Type your email:
-		<form:input path="emailAddress" />
-		
+		<form:input path="emailAddress" />	
 		<form:errors path="emailAddress"/>
 		<br> State of Residency: 
 		<form:select path="state">
@@ -73,7 +72,6 @@
 			<option value="WI">Wisconsin</option>
 			<option value="WY">Wyoming</option>
 		</form:select> 
-		<form:errors path="state" />
 		<br>
 		 level of activity: <form:select path="activityLevel">
 			<option value="Inactive">Inactive</option>
@@ -81,7 +79,6 @@
 			<option value="Very Active">Very Active</option>
 			<option value="Always Active">Always Active</option>
 		</form:select>
-		<form:errors path="activityLevel" />
 		 <br> <input type="submit" value="submit" />
 	</form:form>
 </section>

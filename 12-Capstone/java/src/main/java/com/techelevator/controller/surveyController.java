@@ -24,12 +24,14 @@ public class surveyController {
 	private SurveyDao surveyDao;
 	
 	@RequestMapping(path = "/survey", method = RequestMethod.GET)
-	public String toSurveyPage(Survey survey, ModelMap map, Model modelHolder) {
+	public String toSurveyPage(ModelMap map) {
 		List<Parks> allParks = parksDao.getAllParksInAlphOrder();
 		map.put("parks", allParks);
-		if (!modelHolder.containsAttribute("survey")) {
-			modelHolder.addAttribute("survey", new Survey());
+		
+		if (!map.containsAttribute("survey")) {
+			map.addAttribute("survey", new Survey());
 		} 
+		
 		return "survey";
 	}
 	
@@ -38,11 +40,13 @@ public class surveyController {
 			BindingResult result,
 			RedirectAttributes flash) {
 		if(result.hasErrors()) {
+			//System.out.println("has errors ");
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "survey",
 					result);
 			flash.addFlashAttribute("survey", survey);
 			return "redirect:/survey";
 		}
+		//System.out.println("no erros");
 		surveyDao.save(survey);
 		return "redirect:/favorites";
 	}

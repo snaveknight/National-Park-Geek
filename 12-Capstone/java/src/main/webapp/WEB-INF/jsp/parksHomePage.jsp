@@ -15,10 +15,10 @@
 						<img src="${image }" /> 
 				</a></td>
 				<td>
-					<h3>${parkslist.parkName }</h3>
+					<h1>${parkslist.parkName }</h1>
 				</td>
 				<td>
-					<h3>${parkslist.parkDescription }</h3>
+					<h2>${parkslist.parkDescription }</h2>
 			</tr>
 		</c:forEach>
 	</table>

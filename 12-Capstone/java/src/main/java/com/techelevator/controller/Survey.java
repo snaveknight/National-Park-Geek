@@ -7,16 +7,14 @@ public class Survey {
 	
 	private Long surveyId;
 	
-	@NotBlank(message="Park Code is required")
 	private String parkCode;
 	
+	@NotBlank(message="Email must not be blank")
 	@Email(message="You must enter a valid email")
 	private String emailAddress;
 	
-	@NotBlank(message="State is required")
 	private String state;
 	
-	@NotBlank(message="activity level is required")
 	private String activityLevel;
 	
 	public Long getSurveyId() {

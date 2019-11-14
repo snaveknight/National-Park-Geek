@@ -1,6 +1,11 @@
 @charset "ISO-8859-1";
+html {
+
+}
+
 body {
 font-family: sans-serif;
+background-image: linear-gradient(to bottom right, #AFEEEE, #C71585)
 }
 
 header {
@@ -15,15 +20,22 @@ border-color: black;
 
 li {
 padding-bottom: 5px;
+margin: 2px;
 }
 
 li a {
 color: #0000ff;
 text-decoration: none;
-/font-size: 20pt;/
+font-size: 20pt;
 list-style: none;
-text-align: center;
-vertical-align: middle;
+}
+
+li a:hover {
+text-decoration: underline;
+}
+
+nav:after {
+clear: both;
 }
 
 nav ul {
@@ -33,7 +45,7 @@ width: 100%;
 nav ul li {
 float: left;
 margin-right: 20px;
-background-color: white;
+background-color: #ffffff;
 border-radius: 8px;
 list-style: none;
 text-align: center;
@@ -41,21 +53,58 @@ width: 200px;
 padding-top: 5px;
 }
 
-nav:after {
-clear: both;
+td{
+height: 33%;
+border-bottom-style: double;
+border-color: black;
+padding-top: 15px;
 }
 
-li a:hover {
-text-decoration: underline;
+section {
+padding: 20px;
 }
 
-html {
-	align-content: stretch;
-background-image:linear-gradient(to bottom right, #AFEEEE, #C71585);
+.parkDetails > img {
+width: 80%;
+}
+
+select {
+width: 350px;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+input {
+width: 350px;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+h1 {
+padding: 20px;
+border-style: groove;
+border-color: black;
+}
+
+h2 {
+padding-top: 10px;
+font-weight: bold;
+}
+
+h3 {
+width: 100%;
+border-bottom-style: double;
+border-color: black;
+}
+
+p {
+font-size: 20px;
+font-weight: bold;
+padding-top: 15px;
+margin-bottom: -1px;
 }
 
 .copyright {
 text-align: center;
+font-weight: normal;
 }
-
-

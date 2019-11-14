@@ -20,6 +20,7 @@ public class userController {
 	@RequestMapping("/parkDetails")
 	public String showDetails(@RequestParam String parkCode,ModelMap map) {
 		map.put("parkslist",parksDao.getParkInfoById(parkCode.toUpperCase() ));
+		map.put("weatherlist", parksDao.getWeatherInfo(parkCode.toUpperCase()));
 		return "parkDetails";
 	}
 	
