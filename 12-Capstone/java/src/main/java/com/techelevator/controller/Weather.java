@@ -33,7 +33,7 @@ public class Weather {
 		this.high = high;
 	}
 	public String getForeCast() {
-		return foreCast;
+		return foreCast.toLowerCase();
 	}
 	public void setForeCast(String foreCast) {
 		this.foreCast = foreCast;

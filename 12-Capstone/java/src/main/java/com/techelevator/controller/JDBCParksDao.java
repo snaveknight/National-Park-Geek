@@ -79,7 +79,7 @@ public class JDBCParksDao implements ParksDao {
 			todaysWeather.add(weather);
 		}
 
-		return null;
+		return todaysWeather;
 	}
 	
 	
