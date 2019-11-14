@@ -9,5 +9,7 @@ public interface ParksDao {
 	public Parks getParkInfoById(String parkCode);
 
 	public List<Weather> getWeatherInfo(String parkCode);
+	
+//	public String getAdvisoryCondition(String parkCode);
 
 }

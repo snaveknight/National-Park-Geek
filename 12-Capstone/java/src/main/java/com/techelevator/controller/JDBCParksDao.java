@@ -81,6 +81,25 @@ public class JDBCParksDao implements ParksDao {
 
 		return todaysWeather;
 	}
+
+//	@Override
+//	public String getAdvisoryCondition(String parkCode) {
+//		String advisCondition = "";
+//		if (foreCast.contentEquals("snow")) {
+//			advisCondition = "Pack Snowshoes";
+//		}
+//		if (foreCast.contentEquals("rain")) {
+//			advisCondition = "Pack rain gear";
+//		}
+//		if (foreCast.contentEquals("thunderstorms")) {
+//			advisCondition = "Seek shelter and avoid hiking on exposed bridges";
+//		}
+//		if (foreCast.contentEquals("sunny")) {
+//			advisCondition = "Pack Sunblock";
+//		}
+//		return advisCondition;
+//	}
+	
 	
 	
 	

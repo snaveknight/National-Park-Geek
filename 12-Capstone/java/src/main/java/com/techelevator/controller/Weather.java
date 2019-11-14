@@ -8,6 +8,7 @@ public class Weather {
 	private int high;
 	private String foreCast;
 	
+	
 	public String getParkCode() {
 		return parkCode;
 	}

@@ -18,10 +18,20 @@ public class userController {
 	}
 	
 	@RequestMapping("/parkDetails")
-	public String showDetails(@RequestParam String parkCode,ModelMap map) {
+	public String showDetails(@RequestParam String parkCode, 
+			ModelMap map) {
 		map.put("parkslist",parksDao.getParkInfoById(parkCode.toUpperCase() ));
 		map.put("weatherList", parksDao.getWeatherInfo(parkCode.toUpperCase()));
+//		map.put("advisory", parksDao.getAdvisoryCondition(foreCast));
 		return "parkDetails";
+	}
+	
+	@RequestMapping("/celsiusDetails")
+	public String showCelDetails(@RequestParam String parkCode, ModelMap map) {
+		map.put("parkslist",parksDao.getParkInfoById(parkCode.toUpperCase() ));
+		map.put("weatherList", parksDao.getWeatherInfo(parkCode.toUpperCase()));
+//		map.put("advisory", parksDao.getAdvisoryCondition(foreCast));
+		return "celsiusDetails";
 	}
 	
 

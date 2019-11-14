@@ -38,12 +38,13 @@ Your parks five day forecast starting with today and your weather advisory:
 	<c:url value="/img/weather/${string2}.png" var="image" />
 	<img src="${image }" />
 	<br>
-	<h2>High:  ${weatherlist.high} F</h2>
-	<h2>Low:  ${weatherlist.low }  F</h2>
+	<h2>High:  ${(weatherlist.high - 32) * (5 / 9)} C</h2>
+	<h2>Low:  ${(weatherlist.low - 32) * (5 / 9)}  C</h2>
+	
 	</c:forEach>
-	<a class="celsius-button"
-		href="<c:url value="/celsiusDetails?parkCode=${parkslist.parkCode}"/>">
-	<input type="button" value="celsius" />
+		<a class="celsius-button"
+		href="<c:url value="/parkDetails?parkCode=${parkslist.parkCode}"/>">
+	<input type="button" value="farhenheit" />
 						
 				</a>
 </section>
