@@ -51,7 +51,7 @@ public class JDBCParksDao implements ParksDao {
 			parks.setClimate(results.getString("climate"));
 			parks.setYearFounded(results.getInt("yearfounded"));
 			parks.setAnnualVisitorCount(results.getInt("annualvisitorcount"));
-			parks.setInspirationalQuote(results.getString("inspirationalquote"));
+			parks.setInspirationalQuote(results.getString("inspirationalquote").replaceAll("[^a-zA-Z0-9\\,.; ]", ""));
 			parks.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));
 			parks.setParkDescription(results.getString("parkdescription"));
 			parks.setEntryFee(results.getInt("entryfee"));

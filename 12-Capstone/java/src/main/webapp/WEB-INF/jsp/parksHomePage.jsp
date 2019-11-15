@@ -9,16 +9,17 @@
 	<table>
 		<c:forEach items="${parksList}" var="parkslist">
 			<tr>
-				<td><a class="product-image"
+				<td><a
 					href="<c:url value="/parkDetails?parkCode=${parkslist.parkCode}"/>">
 						<c:url value="/img/parks/${parkslist.parkCode }.jpg" var="image" />
-						<img src="${image }" /> 
+						<img class="product-image" src="${image }" />
 				</a></td>
 				<td>
 					<h1>${parkslist.parkName }</h1>
 				</td>
 				<td>
 					<h2>${parkslist.parkDescription }</h2>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

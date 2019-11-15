@@ -10,11 +10,12 @@
 	<c:forEach items="${favoriteparks}" var="favoriteparks">
 		<tr>
 			<td>
-				<h3>${favoriteparks.parkName }</h3>
+				<p class="fav-park">${favoriteparks.parkName }</p>
 			</td>
-			<td> <h3>${favoriteparks.favorites }</h3>
-	</td>
-	</tr>
+			<td>
+				<p class="fav-tally">${favoriteparks.favorites }</p>
+			</td>
+		</tr>
 	</c:forEach>
-
-			<c:import url="/WEB-INF/jsp/common/parksFooter.jsp" />
+</table>
+<c:import url="/WEB-INF/jsp/common/parksFooter.jsp" />
