@@ -1,7 +1,9 @@
 package com.techelevator.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -82,7 +84,27 @@ public class JDBCParksDao implements ParksDao {
 		return todaysWeather;
 	}
 
-//	@Override
+//	public String getAdvisoryCondition(String parkCode) {
+//		Map<String, String> advisCondition = new HashMap<String, String>();
+//		advisCondition.put("snow", "Pack Snowshoes");
+//		advisCondition.put("rain", "Pack rain gear");
+//		advisCondition.put("thunderstorms", "Seek shelter and avoid hiking on exposed bridges");
+//		advisCondition.put("sunny", "Pack sunblock");
+//		advisCondition.put("crow", "Murder");
+//		animals.put("pigeon", "Kit");
+//		animals.put("falmingo", "Pat");
+//		animals.put("deer", "Herd");
+//		animals.put("dog", "Pack");
+//		animals.put("crocodile", "Float");
+
+//		Map<String, String> foreCast;
+//		if (foreCast.containsKey(parkCode)) {
+//			return advisCondition.get(parkCode);
+//		} else {
+//			return "unknown";
+//		}
+//	}
+//	
 //	public String getAdvisoryCondition(String parkCode) {
 //		String advisCondition = "";
 //		if (foreCast.contentEquals("snow")) {

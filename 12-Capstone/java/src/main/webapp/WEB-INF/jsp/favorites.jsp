@@ -15,6 +15,8 @@
 			<td>
 				<p class="fav-tally">${favoriteparks.favorites }</p>
 			</td>
+			<td><c:url value="/img/parks/${favoriteparks.parkCode }.jpg"
+					var="image" /> <img class="fav-pic" src="${image }" /></td>
 		</tr>
 	</c:forEach>
 </table>

@@ -35,14 +35,14 @@ public class JDBCSurveyDao implements SurveyDao {
 	@Override
 	public List<Parks> getAllParksInFavOrder() {
 		List<Parks> favParks = new ArrayList<>();
-		String sqlGetAllParks = "select COUNT(s.parkcode) AS favorites, parkname\r\n" + 
+		String sqlGetAllParks = "select COUNT(s.parkcode) AS favorites, parkname, s.parkcode \r\n" + 
 				"				FROM survey_result s\r\n" + 
 				"				INNER JOIN park p \r\n" + 
 				"				\r\n" + 
 				"				ON \r\n" + 
 				"				p.parkcode = s.parkcode \r\n" + 
 				"				GROUP BY\r\n" + 
-				"				parkname \r\n" + 
+				"				parkname, s.parkcode \r\n" + 
 				"				ORDER BY\r\n" + 
 				"				favorites DESC";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllParks);
@@ -50,7 +50,7 @@ public class JDBCSurveyDao implements SurveyDao {
 			Parks parks = new Parks();
 			parks.setParkName(results.getString("parkname"));
 			parks.setFavorites(results.getInt("favorites"));
-			
+			parks.setParkCode(results.getString("parkcode").toLowerCase());
 			favParks.add(parks);
 		}
 		return favParks;
